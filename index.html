@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>F R I D A Y</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="robotics.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+
+
+</head>
+
+<body id="body">
+
+  <h2 class="name" id="Name">FRIDAY</h2>
+  <p id="quote" class="quote">the personal virtual assistant</p>
+
+  <div class="hamburger-menu">
+    <input id="menu__toggle" type="checkbox" />
+    <label class="menu__btn" for="menu__toggle">
+      <span></span>
+    </label>
+    <ul id="menu-box" class="menu__box">
+      
+      <li><img class="menu__img" src="robotics.png" alt=""></li> 
+      <li><button data-modal-target="#modal" id="btn" class="menu__item btn">Commands</button></li>
+      <div class="modal" id="modal">
+        <div class="modal-header">
+          <div class="tittle"><p class="cmd">Commands</p></div>
+          <button data-close-button class="close-button"></button>
+        </div>
+        <div class="modal-body">
+          <br>
+          1 : Hello <br>
+          <br>
+          2 : Say About Me<br>
+          <br>
+          3 : sugamanno<br>
+          <br>
+          4 : Are You <br>
+          <br>
+          5 : You Up Friday<br>
+          <br>
+          6 : Friday Are You There<br>
+          <br>
+          7 : Open Instagram<br>
+          <br>
+          8 : Open Facebook<br>
+          <br>
+          9 : Open whatsapp<br>
+          <br>
+          10: open My various Socialmedia Accounts<br>
+          <br>
+          11: Open My Gmail<br>
+          <br>
+          12: Open My Classroom<br>
+          <br>
+          13: Open Youtube<br>
+          <br>
+          14: Whats the Time<br>
+          <br>
+          15: How are you Friday<br>
+          <br>
+          16: Play a song<br>
+          <br>
+          17: Who are You<br>
+          <br>
+          18: Friday Give me Some Motivation<br>
+          <br>
+          19: Friday Motivate me <br>
+          <br>
+          20: Alexa..!<br>
+          <br>
+          21: Friday are you single<br>
+          <br>
+          22: whats the Date today?<br>
+          <br>
+          23: search +(key Word)<br>
+          <br>
+          24: who is +(Person name that You want to Know About Him)<br>
+          <br>
+          25: Friday sing a rhyme<br>
+          <br>
+          26: switch to light Mode<br>
+          <br>
+          27: switch to Dark Mode<br>
+          <br>
+          28: you are brilliant<br>
+          <br>
+          29: Friday say a joke <br>
+          <br>
+          30: Shutdown (to Off program)
+        </div>
+      </div>
+      <div id="overlay"></div>
+			<li><a class="menu__item" href="#" onclick="toggle()">Profile</a></li>
+      
+      <li><span class="menu__item theme-changer"   href="#">
+        
+        <button id="theme2" onclick="LightMode()"><i class="fas fa-sun fa-lg"></i></button>
+        
+        <p id="theme-name">Themes</p>
+        
+        <button id="theme1" onclick="darkMode()"><i class="fas fa-moon fa-lg">
+
+        </i></button></span></li>
+			<li><a class="menu__item" href="#" id="myBtn" onclick="myFunction()">About Friday &#8595;</a></li>
+      <p><span id="dots"></span><div id="more" class="board"><p>F R I D A Y is a virtual assistant AI technology developed by <b>Me</b>,
+         it is used in the smartphone and the Pc's. It is capable of voice interaction, music playback, making to-do lists,
+          setting alarms, streaming podcasts, playing audiobooks, and providing weather, traffic, sports, 
+          and other real-time information, such as news. F R I D A Y can also control several smart devices using 
+          itself as a home automation system. Users are able to extend the F R I D A Y capabilities by installing "skills" 
+          (additional functionality developed by third-party vendors, in other settings more commonly called apps) such as weather
+           programs and audio features.
+          </p></div>
+      </span></p>
+
+		
+    </ul>
+  </div>
+
+
+
+
+  <div id="popup" >
+    <a href="#" onclick="toggle()"><i class="far fa-times-circle fa-lg"></i></a>
+    <div class="hero">
+      <img src="man.png" style="width: 75px; height: 75px;" alt="">
+    </div>
+    <div class=" rounded-lg p-8 flex flex-col ">
+      <h2 class="text-gray-900 text-lg font-medium title-font text-center mb-5">Set Your Profile</h2>
+      <div class="relative mb-4">
+        <label for="full-name" class="leading-7 text-sm text-gray-600">Full Name</label>
+        <input type="text" id="full-name" name="full-name" class="w-full bg-white input rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+      </div>
+      <div class="relative mb-4">
+        <label for="email" class="leading-7 text-sm text-gray-600">Email</label>
+        <input type="email" id="email" name="email" class="w-full bg-white rounded input border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+      </div>
+      <button id="btn-insert"  class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg" onclick="local()">Save</button>
+    </div>
+  </div>
+
+
+
+
+  <div class="mic-container">
+    <button id="microphoneButton"> <img id="mask" class="robo" src="robotics.png" height="70" width="65">
+      <span class="wave wave1" style="--i:1;"></span>
+      <span class="wave wave1" style="--i:2;"></span>
+      <span class="wave wave1" style="--i:3;"></span>
+      <span class="wave wave1" style="--i:4;"></span>
+      <span class="wave wave1" style="--i:5;"></span>
+    </button>
+  </div>
+  <div class="content-box">
+    <p class="listen-para"></p>
+    <p id="Cntnt" class="content"/*onload="Javascript:utter.onend(5000)*/">Click The Robo Button to <br> Activate Friday</p>
+
+  </div>
+
+  <section class="bars">
+
+    <div class="loading">
+
+      <div class="bar obj2"></div>
+      <div class="bar obj2"></div>
+      <div class="bar obj2"></div>
+      <div class="bar obj"></div>
+      <div class="bar obj"></div>
+      <div class="bar obj"></div>
+      <div class="bar obj"></div>
+      <div class="bar obj"></div>
+      <div class="bar obj"></div>
+      <div class="bar obj2"></div>
+      <div class="bar obj2"></div>
+      <div class="bar obj2"></div>
+
+    </div>
+  </section>
+  <footer>
+    <p class="me"><span class="rhody">FRIDAY</span>@ Copyright Deserve 2021 . <br> Created By <a id="Me" class="link"
+        href="https://instagram.com/mohamed_shabil_?igshid=3zgjerrra4el">Me</a></p>
+  </footer>
+
+  <script src="appcopied.js" type="text/JavaScript"></script>
+</body>
+
+</html>
+
+
+
